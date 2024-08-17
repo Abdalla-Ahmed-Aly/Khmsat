@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class superAdmin
+class User_midleware
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class superAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()&&auth()->user()->role==2) {
+        if (Auth::check()&&auth()->user()->role==0) {
             return $next($request);
         }
-        return response()->json(['message'=>'not super Admin']);
+        return response()->json(['message'=>'not user']);
         
     }
 }
