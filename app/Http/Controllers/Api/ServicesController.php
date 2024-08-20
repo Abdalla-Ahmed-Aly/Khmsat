@@ -57,6 +57,12 @@ class ServicesController extends Controller
         return response()->json($Services);
 
     }
+    public function showTitle(string $title)
+    {
+        $services = Services::where('Titel', $title)->get();
+    
+        return response()->json($services);
+    }
     
     public function update(ServicesRequest $request, string $id)
     {

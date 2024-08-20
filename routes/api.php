@@ -53,12 +53,14 @@ Route::middleware(['auth:sanctum','user'])->group(function (){
     // Route::get('/Services/show/{id}', [ServicesController::class,"show"]);
     Route::put('/Services/update/{id}', [ServicesController::class,"update"]);
     Route::delete('/Services/delete/{id}', [ServicesController::class,"destroy"]);
+    
+    
 });
 
 Route::post('/register', [Authentication::class,"register"]);
 Route::post('/login', [Authentication::class,"login"]);
 
-
+Route::get('/search/{Titel}', [ServicesController::class,"showTitle"]);
 
 
 
