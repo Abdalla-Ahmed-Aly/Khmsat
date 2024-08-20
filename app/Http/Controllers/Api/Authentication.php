@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 use App\Http\Requests\userRequest;
 use App\Http\Requests\userRequestLogin;
 use App\Models\User;
-use Hash;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class Authentication extends Controller
 {

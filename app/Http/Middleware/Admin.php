@@ -16,9 +16,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()&&auth()->users()->role==1) {
+        if (Auth::check()&&auth()->user()->role==1) {
             return $next($request);
         }
         return response()->json(['message'=>'not Admin']);
-            }
+        
+    }
 }
